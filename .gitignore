@@ -2,3 +2,5 @@ node_modules/
 *.tsbuildinfo
 .npm
 .eslintcache
+.DS_Store
+cypress/support/e2e.js

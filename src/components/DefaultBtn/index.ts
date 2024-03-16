@@ -1,14 +1,14 @@
 import './style.css';
-import { Color, BtnType } from '../../types';
-class AddBtn extends HTMLElement {
+import { BtnColor, BtnType } from '../../types';
+class DefaultBtn extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
-    const color = this.getAttribute('color') as Color;
+    const color = this.getAttribute('color') as BtnColor;
     const text = this.getAttribute('text');
-    const type = this.getAttribute('type') as BtnType;
+    const type = this.getAttribute('type') as BtnType | undefined;
     this.innerHTML = /*html*/ `             
       <button
         type=${type || 'button'}
@@ -19,4 +19,4 @@ class AddBtn extends HTMLElement {
     `;
   }
 }
-customElements.define('default-btn', AddBtn);
+customElements.define('default-btn', DefaultBtn);
